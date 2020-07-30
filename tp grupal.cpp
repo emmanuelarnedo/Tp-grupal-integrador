@@ -3,7 +3,7 @@
 
 //Soy Emmanuel, es una prueba esto
 //holaaaaa
-
+///Soy un comentario
 main(){
 	int num, juego;
 	printf("\t\t\t\t\t\tBIENVENIDOS\n\n");
