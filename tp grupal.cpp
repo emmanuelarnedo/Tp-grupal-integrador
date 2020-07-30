@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-//esto es una modificacion mia de ejemplo
+
+//Soy Emmanuel, es una prueba esto
+
 main(){
 	int num, juego;
 	printf("\t\t\t\t\t\tBIENVENIDOS\n\n");
