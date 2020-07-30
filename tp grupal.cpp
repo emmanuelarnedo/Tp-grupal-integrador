@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 //Soy Emmanuel, es una prueba esto
+//holaaaaa
 
 main(){
 	int num, juego;
