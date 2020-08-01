@@ -1,8 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "jugamos.h"
 
-//Soy Emmanuel, es una prueba esto
-//holaaaaa
 
 main(){
 	int num, juego;
@@ -24,7 +21,7 @@ main(){
 			printf("\n\t\t\t\t"); system("pause");
 			system("cls");
 			switch (juego){
-				case 1: printf("\t\t\t\t\tBienvenido a Maymen!");
+				case 1: Maymen ();
 				break;
 				case 2: printf("\t\t\t\t\tBienvenido a Adivinum!");
 				break;
