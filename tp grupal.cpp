@@ -3,6 +3,8 @@
 
 main(){
 	int num, juego;
+	int opc;
+	
 	printf("\t\t\t\t\t\tBIENVENIDOS\n\n");
 	printf("\t\t\t\tSeleccione la categoria de juego que desea\n\n");	
 	printf("\t\t\t1. Juegos Numericos, 2. Juegos de letras y 0 por si desea salir\n\n");
@@ -31,9 +33,17 @@ main(){
 			}
 		break;
 		case 2: printf ("\t\t\tUsted ha seleccionado la categoria de Juegos de Letras \n");
-		printf("\n\t\t\t\t"); system("pause");
-		system("cls");
-			printf("\t\t\t\t\tBienvenido a El ahorcado!");
+			printf("\n\t\t\t"); printf("Ingrese 1 si desea jugar a el ahorcado y 0 si no\n\n");
+			printf("\n\t\t\t"); scanf("%d", &opc);
+			printf("\n\t\t\t\t"); system("pause");
+			system("cls");	
+			switch(opc){
+				case 0: getch();
+				break;
+				case 1: Ahorcado ();
+				break;
+				default: printf ("Opcion ingresada no valida");
+			}
 		break;
 		default:  printf ("Opcion ingresada no valida \n");	
 	}
