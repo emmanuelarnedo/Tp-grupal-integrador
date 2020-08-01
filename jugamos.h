@@ -3,6 +3,8 @@
 #include <time.h>
 
 void Maymen();
+void Ahorcado();
+
 
 void Maymen(){
 	int numero, nroaleatorio, cont=1, min=1, max=999, puntaje=11;
@@ -37,7 +39,59 @@ void Maymen(){
 		cont++;
 		puntaje=puntaje-1;
 	}while(numero != nroaleatorio && cont<11);
+	
+	if (numero== nroaleatorio) {
+		printf("FELICIDADES! Adivinaste el numero\n\n");
+		printf("%d",&nroaleatorio);
+		printf("\nPuntaje obtenido %d\n\n", cont);
+		system("pause");
+		}
+	else{
+		printf("Lo sentimos, no adivinaste el numero\n\n");
+		printf("El numero aleatorio era %d\n\n", nroaleatorio);
 	}
+	
+	}
+	
+	
+void Ahorcado{
+
+	char frase[60],rep[100],temporal[100];
+    char pal;
+    int longitud,i,j,inicial,acertado=0,temp=0,oportunidades=9;
+    int repetido=0,gano=0;
+    printf("  *  JUEGO DEL AHORCADO  *\n\n");
+    printf("  Introduzca la palabra a adivinar: ");
+    gets(frase);
+    system("cls");
+    longitud = 0;
+    inicial = 0;
+    j = 0;
+    rep[0] = ' ';
+    rep[1] = '\0';
+    do
+    {
+        system("cls");
+        temp=0;
+        if(inicial == 0)
+        {
+            for(i=0;i<strlen(frase);i++)
+            {
+                if(frase[i] == ' ')
+                {
+                    temporal[i] = ' ';
+                    longitud++;
+                }
+                else
+                {
+                    temporal[i] = '_';
+                    longitud++;
+                }
+            }
+        }
+
+
+}		
 	
 	
 	
