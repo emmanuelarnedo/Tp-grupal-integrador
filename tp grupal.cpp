@@ -25,7 +25,7 @@ main(){
 			switch (juego){
 				case 1: Maymen ();
 				break;
-				case 2: printf("\t\t\t\t\tBienvenido a Adivinum!");
+				case 2: Adivinum ();
 				break;
 				case 3: printf("\t\t\t\t\tBienvenido a Warcoin!");
 				break;
