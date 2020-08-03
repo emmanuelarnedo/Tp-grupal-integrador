@@ -3,6 +3,7 @@
 #include <time.h>
 #include <string.h>
 #include <conio.h>
+#include <ctype.h>
 
 void Maymen();
 void Ahorcado();
@@ -53,54 +54,151 @@ void Maymen(){
 		printf("\nPuntaje obtenido %d\n\n", cont);
 	}
 }
+
 	
 void Ahorcado(){
+	printf("\t\t\t\t\tBienvenido a el Ahorcado!\n\n");
+	printf("Este juego de a dos jugadores consiste en que el jugador 1 ingresa la palabra y el jugador 2 debera adivinar esa palabra\n\n");
+	printf("Reglas: \n\n1. El jugador 1 ingresa la palabra al incio del juego\n\n");
+	printf("2. El jugador 2 debera adivinar la palabra ingresando letras al azar\n\n");
+	printf("3. Se le indicara al jugador 2 las letras adivinadas que contenga la palabra\n\n");
+	printf("4. Se le indicara al jugador 2 las partes descubiertas e intentos restantes\n\n");	
+	printf("Puntaje: \n\nEl puntaje final del jugador 2 sera la cantidad de partes del cuerpo descubiertas al fallar intentos menos 50\n\n");
+	printf("Ejemplos de palabras a ingresar: \n\nCompilador-Entorno-Computadora-Estructura-Seleccion-Repeticion-Directiva-Algoritmo-Program-Ejecucion\n\n");
+	printf("Int-Float-Char-Double-Long-If-Else-For-While-Return-Break-Switch-Case-Main-Include-Define-Struct-Cin-Cout-Endl\n\n");
+	printf("Comenzamos?\n\n");
+	system("pause");
+	system("cls");
 	
-	char frase[60],rep[100],temporal[100];
-    char pal;
-    int longitud,i,j,inicial,acertado=0,temp=0,oportunidades=9;
-    int repetido=0,gano=0;
-    printf("  *  JUEGO DEL AHORCADO  *\n\n");
-    printf("  Introduzca la palabra a adivinar: ");
-    gets(frase);
-    system("pause");
-    system("cls");
-    longitud = 0;
-    inicial = 0;
-    j = 0;
-    rep[0] = ' ';
-    rep[1] = '\0';
-    do
-    {
-        system("cls");
-        temp=0;
-        if(inicial == 0)
-        {
-            for(i=0;i<strlen(frase);i++)
-            {
-                if(frase[i] == ' ')
-                {
-                    temporal[i] = ' ';
-                    longitud++;
-                }
-                else
-                {
-                    temporal[i] = '_';
-                    longitud++;
-                }
-            }
-        }
-        inicial = 1;
-        temporal[longitud] = '\0';
-        for(i=0;i<strlen(rep);i++)
-        {
-            if(rep[i] == pal)
-            {
-                repetido = 1;
-                break;
-            }
-            else
-           {
-               repetido = 0;
-           }
-        }
+// Variable para leer el Nombre
+	char palabra[50], adivina[50], original[50];
+	
+	int puntaje;
+	
+ // Indice
+	int indice=0;
+ // Control de Intentos
+	int intentos=10;
+ // Para leer el Caracter
+	char caracter;
+ // Encontro
+	int encontroLetra;
+ // Cuenta letras encontradas
+	int letrasAdivinadas=0;
+	
+ // Solicita la Palabra
+	puts("Jugador 1, ingrese la palabra y presione enter para finalizar\n\t");
+
+ // Ciclo para leer la Palabra Letra por letra
+	do{   // Lee el caracter
+	caracter = getch();
+	putchar('*');
+  // Coloca el Caracter
+	if (caracter==13)
+	break;
+// Coloca el Caracter en la palabra en mayúsculas
+	palabra[indice]=toupper(caracter);
+	original[indice]=toupper(caracter);
+  // Colocamos _ en la palabra visible
+	adivina[indice]='-';
+  // Incrementamos el indice
+	indice++;
+	}while(1);
+	printf("\n");
+ // Coloca el fin de CAdena
+	palabra[indice]='\x0';
+	original[indice]='\x0';
+	adivina[indice]='\x0';	
+ // Ciclo para capturar letra
+	do{
+  // Mensaje
+	printf("\n\tLa palabra a adivinar es de %d letras y esta asi:\n",strlen(palabra));
+	puts(adivina);
+	puts("\n\tIngrese una letra: ");
+	
+  // Lee el caracter
+	caracter = toupper(getche());
+	printf("\n");
+  // Inicializa la bandera de que encontró palabra
+	encontroLetra=0;
+  // Ciclo para buscar el caracter en la palabra
+	for(indice=0; indice<strlen(palabra); indice++){
+   // Verifica que no sea una letra encontrada
+		if (palabra[indice]!='*'){
+    // Verifica que sea la letra
+			if (palabra[indice]==caracter){
+     // Activa la bandera de que encontró
+    		encontroLetra=1;
+     // Incrementa el Contador de Letras Encontradas
+    		letrasAdivinadas++;
+     // Cooloca la letra en el vector de adivina
+     adivina[indice]=palabra[indice];
+     // La marca como encontrada
+     palabra[indice]='*';
+			}
+		}
+	}
+  // Verifica si encontró
+	if (encontroLetra==1){
+   // Mensaje de que es correcta la letra
+		puts("\nLa letra es correcta\n\n");
+		if (letrasAdivinadas == strlen(palabra)){
+    	puts("\nHas adivinado la palabra !\n\n");
+    	puts(adivina);
+    	break;
+   		}
+  	}
+	else{
+		if (intentos == 1){
+    	puts("\nHas Fallado !");
+    	printf("\nLa palabra correcta era: %s\n\n",original);
+    	break;
+   		}
+    	else{
+			puts("\nError en letra");
+    // Decrementa intentos
+        	intentos--;         
+    		printf("\nTe quedan %d intentos\n",intentos);
+   			}
+		if(intentos == 9){
+			char estado[500]= "Cabeza\n"; 
+			printf("\nEstado del muñeco: %s", estado); printf("\t");
+			printf(" ___");printf("\n\t");
+			printf("|   |"); printf("\n\t");
+			printf("|x x|");printf("\n\t");
+			printf("| ~ |"); printf("\n\t");
+			printf("|___|");printf("\n\n");}
+		if(intentos == 8){
+		 	char estado[500]= "Cabeza-Tronco\n\n";
+			printf("\nEstado del muñeco: %s", estado);}
+		if(intentos == 7){
+			char estado[500]= "Cabeza-Tronco-Brazo izquierdo\n\n";
+			printf("\nEstado del muñeco: %s", estado);}
+		if(intentos == 6){
+			char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho\n\n";
+			printf("\nEstado del muñeco: %s", estado);}	
+		if(intentos == 5){
+			char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda\n\n";
+			printf("\nEstado del muñeco: %s", estado);}
+		if(intentos == 4){
+			char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda-Pierna Derecha\n\n";
+			printf("\nEstado del muñeco: %s", estado);}
+		if(intentos == 3){
+			char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda-Pierna Derecha-Mano Izquierda\n\n";
+			printf("\nEstado del muñeco: %s", estado);}
+		if(intentos == 2){
+			char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda-Pierna Derecha-Mano Izquierda-Mano Derecha\n\n";
+			printf("\nEstado del muñeco: %s", estado);}
+		if(intentos == 1){
+			char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda-Pierna Derecha-Mano Izquierda-Mano Derecha-Pie izquierdo\n\n";
+			printf("\nEstado del muñeco: %s", estado);}
+		}
+	system ("pause"); system("cls");
+	}while(1);
+
+	system("pause");
+}
+
+
+
+	
