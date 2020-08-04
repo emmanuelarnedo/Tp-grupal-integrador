@@ -227,6 +227,42 @@ void Adivinum(){
 	d1 = n; 
 
 	} while (d1 == d2 || d1 == d3 || d1 == d4 || d2 == d3 || d2 == d4 || d3 == d4 || d1 == 0 || d2 == 0 || d3 == 0 || d4 == 0);
+	
+	int i=1; 
+	
+	for(i=1; i<11 || d1==i1 && d2==i2 && d3==i3 && d4==i4 ; i++){
+		do{	printf("Intento :%d\n", i);
+			printf("\nIngrese un numero para comparar posiciones: \n\n");
+			scanf("%d", &comparar);
+			}while(comparar<1000 || comparar>9999);
+	
+			i4 = comparar % 10;
+			comparar = (comparar - i4) / 10;
+			i3 = comparar % 10;
+			comparar = (comparar - i3) / 10;
+			i2 = comparar % 10;
+			comparar = (comparar - i2) / 10;
+			i1 = comparar; 
+			
+				if(i1 == d2 || i1 == d3 || i1 == d4 ){	printf("Cant. otra posicion: 1\n");	}
+				
+				if(i2 == d1 || i2 == d3 || i2 == d4 ){	printf("Cant. otra posicion: 2\n");	}
+					
+				if(i3 == d1 || i3 == d2 || i3 == d4 ){	printf("Cant. otra posicion: 3\n");	}	
+				
+				if(i4 == d1 || i4 == d2 || i4 == d3 ){	printf("Cant. otra posicion: 4\n");	}
+				
+				if(d1 == i1){	printf("Cant. misma posicion: 1\n");	}
+				
+				if(d2 == i2){	printf("Cant. misma posicion: 2\n");	}
+				
+				if(d3 == i3){	printf("Cant. misma posicion: 3\n");	}
+				
+				if(d4 == i4){	printf("Cant. misma posicion: 4\n");	}
+				
+				if(d1==i1 && d2==i2 && d3==i3 && d4==i4){	printf("Felicidades! Adivinaste el numero de cuatro cifras\n\n");		puntaje = 11-i; 
+															printf("Puntaje final: %d", puntaje);		abort();	}
+				}
 
 }
 
