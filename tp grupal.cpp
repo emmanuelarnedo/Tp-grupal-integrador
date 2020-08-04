@@ -10,7 +10,8 @@ main(){
 	printf("\t\t\t1. Juegos Numericos, 2. Juegos de letras y 0 por si desea salir\n\n");
 	printf("\t\t\t\t"); scanf ("%d", &num);
 	printf("\n\t\t\t\t");
-	printf("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<V-A-M>\n"); system("pause");
+	printf("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<V-A-M>\n"); 
+	printf("\n\t\t\t\t"); system("pause");
 	system("cls");
 	
 	

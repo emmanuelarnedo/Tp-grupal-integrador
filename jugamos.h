@@ -114,9 +114,9 @@ void Ahorcado(){
  
 	do{
   
-	printf("\n\tLa palabra a adivinar es de %d letras y esta asi:\n",strlen(palabra));
+	printf("La palabra a adivinar es de %d letras y esta asi:\n",strlen(palabra));
 	puts(adivina);
-	puts("\n\tIngrese una letra: ");
+	puts("\nIngrese una letra: ");
 	
   
 	caracter = toupper(getche());
@@ -154,6 +154,19 @@ void Ahorcado(){
 		if (intentos == 1){
     	puts("\nHas Fallado !");
     	printf("\nLa palabra correcta era: %s\n\n",original);
+    	char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda-Pierna Derecha-Mano Izquierda-Mano Derecha-Pie izquierdo-Pie derecho\n\n";
+			printf("\nEstado del muñeco: %s", estado); printf("\t");
+			printf(" ___");  printf("\n\t");
+			printf("|   |"); printf("\n\t");
+			printf("|x x|"); printf("\n\t");
+			printf("| ~ |"); printf("\n\t");
+			printf("|___|"); printf("\n\t");			
+			printf(" ||| "); printf("\n       ");
+		   printf("/ ||| \\"); printf("\n      ");
+		  printf("/  |||  \\"); printf("\n    ");
+		printf(" O   / \\   O"); printf("\n      ");
+		  printf("  /   \\"); printf("\n    ");
+		printf("  n       n"); printf("\n     ");
     	break;
    		}
     	else{
@@ -172,29 +185,106 @@ void Ahorcado(){
 			printf("|___|");printf("\n\n");}
 		if(intentos == 8){
 		 	char estado[500]= "Cabeza-Tronco\n\n";
-			printf("\nEstado del muñeco: %s", estado);}
+			printf("\nEstado del muñeco: %s", estado); printf("\t");
+			printf(" ___");  printf("\n\t");
+			printf("|   |"); printf("\n\t");
+			printf("|x x|"); printf("\n\t");
+			printf("| ~ |"); printf("\n\t");
+			printf("|___|"); printf("\n\t");			
+			printf(" ||| "); printf("\n\t");
+			printf(" ||| "); printf("\n\t");
+			printf(" ||| "); printf("\n\t"); }
 		if(intentos == 7){
 			char estado[500]= "Cabeza-Tronco-Brazo izquierdo\n\n";
-			printf("\nEstado del muñeco: %s", estado);}
+			printf("\nEstado del muñeco: %s", estado); printf("\t");
+			printf(" ___");  printf("\n\t");
+			printf("|   |"); printf("\n\t");
+			printf("|x x|"); printf("\n\t");
+			printf("| ~ |"); printf("\n\t");
+			printf("|___|"); printf("\n\t");			
+			printf(" ||| "); printf("\n       ");
+		   printf("  ||| \\"); printf("\n      ");
+		  printf("   |||  \\"); printf("\n\t");	}
 		if(intentos == 6){
 			char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho\n\n";
-			printf("\nEstado del muñeco: %s", estado);}	
+			printf("\nEstado del muñeco: %s", estado); printf("\t");
+			printf(" ___");  printf("\n\t");
+			printf("|   |"); printf("\n\t");
+			printf("|x x|"); printf("\n\t");
+			printf("| ~ |"); printf("\n\t");
+			printf("|___|"); printf("\n\t");			
+			printf(" ||| "); printf("\n       ");
+		   printf("/ ||| \\"); printf("\n      ");
+		  printf("/  |||  \\"); printf("\n"); }	
 		if(intentos == 5){
 			char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda\n\n";
-			printf("\nEstado del muñeco: %s", estado);}
+			printf("\nEstado del muñeco: %s", estado); printf("\t");
+			printf(" ___");  printf("\n\t");
+			printf("|   |"); printf("\n\t");
+			printf("|x x|"); printf("\n\t");
+			printf("| ~ |"); printf("\n\t");
+			printf("|___|"); printf("\n\t");			
+			printf(" ||| "); printf("\n       ");
+		   printf("/ ||| \\"); printf("\n      ");
+		  printf("/  |||  \\"); printf("\n      ");
+		  printf("     \\"); printf("\n      ");
+		  printf("      \\"); printf("\n     "); }
 		if(intentos == 4){
 			char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda-Pierna Derecha\n\n";
-			printf("\nEstado del muñeco: %s", estado);}
+			printf("\nEstado del muñeco: %s", estado); printf("\t");
+			printf(" ___");  printf("\n\t");
+			printf("|   |"); printf("\n\t");
+			printf("|x x|"); printf("\n\t");
+			printf("| ~ |"); printf("\n\t");
+			printf("|___|"); printf("\n\t");			
+			printf(" ||| "); printf("\n       ");
+		   printf("/ ||| \\"); printf("\n      ");
+		  printf("/  |||  \\"); printf("\n      ");
+		  printf("   / \\"); printf("\n      ");
+		  printf("  /   \\"); printf("\n     ");
+			}
 		if(intentos == 3){
 			char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda-Pierna Derecha-Mano Izquierda\n\n";
-			printf("\nEstado del muñeco: %s", estado);}
+			printf("\nEstado del muñeco: %s", estado); printf("\t");
+			printf(" ___");  printf("\n\t");
+			printf("|   |"); printf("\n\t");
+			printf("|x x|"); printf("\n\t");
+			printf("| ~ |"); printf("\n\t");
+			printf("|___|"); printf("\n\t");			
+			printf(" ||| "); printf("\n       ");
+		   printf("/ ||| \\"); printf("\n      ");
+		  printf("/  |||  \\"); printf("\n     ");
+		 printf("    / \\   O"); printf("\n      ");
+		  printf("  /   \\"); printf("\n     ");	} 
 		if(intentos == 2){
 			char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda-Pierna Derecha-Mano Izquierda-Mano Derecha\n\n";
-			printf("\nEstado del muñeco: %s", estado);}
+			printf("\nEstado del muñeco: %s", estado); printf("\t");
+			printf(" ___");  printf("\n\t");
+			printf("|   |"); printf("\n\t");
+			printf("|x x|"); printf("\n\t");
+			printf("| ~ |"); printf("\n\t");
+			printf("|___|"); printf("\n\t");			
+			printf(" ||| "); printf("\n       ");
+		   printf("/ ||| \\"); printf("\n      ");
+		  printf("/  |||  \\"); printf("\n    ");
+		printf(" O   / \\   O"); printf("\n      ");
+		  printf("  /   \\"); printf("\n     ");	}
 		if(intentos == 1){
 			char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda-Pierna Derecha-Mano Izquierda-Mano Derecha-Pie izquierdo\n\n";
-			printf("\nEstado del muñeco: %s", estado);}
+			printf("\nEstado del muñeco: %s", estado); printf("\t");
+			printf(" ___");  printf("\n\t");
+			printf("|   |"); printf("\n\t");
+			printf("|x x|"); printf("\n\t");
+			printf("| ~ |"); printf("\n\t");
+			printf("|___|"); printf("\n\t");			
+			printf(" ||| "); printf("\n       ");
+		   printf("/ ||| \\"); printf("\n      ");
+		  printf("/  |||  \\"); printf("\n    ");
+		printf(" O   / \\   O"); printf("\n      ");
+		  printf("  /   \\"); printf("\n    ");
+		printf("         n"); printf("\n     ");	}
 		}
+	printf("\n");
 	system ("pause"); system("cls");
 	}while(1);
 	printf("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<V-A-M>\n");
@@ -232,7 +322,7 @@ void Adivinum(){
 	int i=1; 
 	
 	for(i=1; i<11 || d1==i1 && d2==i2 && d3==i3 && d4==i4 ; i++){
-		do{	printf("\n\nIntento :%d\n", i);
+		do{	printf("Intento :%d\n", i);
 			printf("\nIngrese un numero para comparar posiciones: \n\n");
 			scanf("%d", &comparar);
 			system("cls"); 
@@ -268,7 +358,7 @@ void Adivinum(){
 				
 				
 				if(d1==i1 && d2==i2 && d3==i3 && d4==i4){
-				printf("\n\n¡Felicidades! Adivinaste el numero de cuatro cifras\n\n");	
+				printf("\n\nFelicidades! Adivinaste el numero de cuatro cifras\n\n");	
 				puntaje = 11-i;
 				printf("Puntaje final: %d", puntaje);	
 				printf("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<V-A-M>");	abort();	}
