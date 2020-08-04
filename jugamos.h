@@ -47,12 +47,14 @@ void Maymen(){
 		printf("\nFELICIDADES! Adivinaste el numero\n\n");
 		printf("%d\n", nroaleatorio);
 		printf("\nPuntaje obtenido: %d\n\n", cont);
+		printf("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<V-A-M>\n");
 		system("pause");
 		}
 	else{
 		printf("Lo sentimos, no adivinaste el numero\n\n");
 		printf("El numero aleatorio era %d\n\n", nroaleatorio);
 		printf("\nPuntaje obtenido %d\n\n", cont);
+		printf("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<V-A-M>\n");
 	}
 }
 
@@ -71,77 +73,76 @@ void Ahorcado(){
 	system("pause");
 	system("cls");
 	
-// Variable para leer el Nombre
+
 	char palabra[50], adivina[50], original[50];
 	
 	int puntaje;
 	
- // Indice
+ 
 	int indice=0;
- // Control de Intentos
+
 	int intentos=10;
- // Para leer el Caracter
+ 
 	char caracter;
- // Encontro
+
 	int encontroLetra;
- // Cuenta letras encontradas
+ 
 	int letrasAdivinadas=0;
 	
- // Solicita la Palabra
+ 
 	puts("Jugador 1, ingrese la palabra y presione enter para finalizar\n\t");
 
- // Ciclo para leer la Palabra Letra por letra
-	do{   // Lee el caracter
+ 
+	do{   
 	caracter = getch();
 	putchar('*');
-  // Coloca el Caracter
+  
 	if (caracter==13)
 	break;
-// Coloca el Caracter en la palabra en mayúsculas
 	palabra[indice]=toupper(caracter);
 	original[indice]=toupper(caracter);
-  // Colocamos _ en la palabra visible
+  
 	adivina[indice]='-';
-  // Incrementamos el indice
+  
 	indice++;
 	}while(1);
 	printf("\n");
- // Coloca el fin de CAdena
+
 	palabra[indice]='\x0';
 	original[indice]='\x0';
 	adivina[indice]='\x0';	
- // Ciclo para capturar letra
+ 
 	do{
-  // Mensaje
+  
 	printf("\n\tLa palabra a adivinar es de %d letras y esta asi:\n",strlen(palabra));
 	puts(adivina);
 	puts("\n\tIngrese una letra: ");
 	
-  // Lee el caracter
+  
 	caracter = toupper(getche());
 	printf("\n");
-  // Inicializa la bandera de que encontró palabra
+  
 	encontroLetra=0;
-  // Ciclo para buscar el caracter en la palabra
+  
 	for(indice=0; indice<strlen(palabra); indice++){
-   // Verifica que no sea una letra encontrada
+   
 		if (palabra[indice]!='*'){
-    // Verifica que sea la letra
+    
 			if (palabra[indice]==caracter){
-     // Activa la bandera de que encontró
+     
     		encontroLetra=1;
-     // Incrementa el Contador de Letras Encontradas
+     
     		letrasAdivinadas++;
-     // Cooloca la letra en el vector de adivina
+     
      adivina[indice]=palabra[indice];
-     // La marca como encontrada
+     
      palabra[indice]='*';
 			}
 		}
 	}
-  // Verifica si encontró
+  
 	if (encontroLetra==1){
-   // Mensaje de que es correcta la letra
+   
 		puts("\nLa letra es correcta\n\n");
 		if (letrasAdivinadas == strlen(palabra)){
     	puts("\nHas adivinado la palabra !\n\n");
@@ -157,7 +158,7 @@ void Ahorcado(){
    		}
     	else{
 			puts("\nError en letra");
-    // Decrementa intentos
+    
         	intentos--;         
     		printf("\nTe quedan %d intentos\n",intentos);
    			}
@@ -196,7 +197,7 @@ void Ahorcado(){
 		}
 	system ("pause"); system("cls");
 	}while(1);
-
+	printf("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<V-A-M>\n");
 	system("pause");
 }
 void Adivinum(){
@@ -204,7 +205,7 @@ void Adivinum(){
 	printf("Este juego consiste en adivinar un numero de 4 cifras\n\n");
 	printf("Reglas: \n\n1. El jugador cuenta con 10 intentos para adivinar este numero secreto\n\n");
 	printf("2. Si el jugador adivina el numero entonces gana la partida\n\n");
-	printf("3. Se le indicara al jugador las posiciones que ocupan los digitos ingresados, misma posicion u otra posicion (1 vez como maximo)\n\n");
+	printf("3. Se le indicara al jugador las posiciones que ocupan los digitos ingresados, misma posicion u otra posicion \n(1 vez como maximo)\n\n");
 	printf("Puntaje: \n\n El puntaje obtenido depende de la cantidad de intentos: si lo adivina en el primer intento, obtiene 10 puntos\n\n");
 	printf("Comenzamos?\n\n");
 	system("pause");
@@ -231,9 +232,13 @@ void Adivinum(){
 	int i=1; 
 	
 	for(i=1; i<11 || d1==i1 && d2==i2 && d3==i3 && d4==i4 ; i++){
-		do{	printf("Intento :%d\n", i);
+		do{	printf("\n\nIntento :%d\n", i);
 			printf("\nIngrese un numero para comparar posiciones: \n\n");
 			scanf("%d", &comparar);
+			system("cls"); 
+			printf("***********************************\n");
+			printf(" El numero que ingreso es ->  %d\n",comparar);
+			printf("***********************************\n\n");
 			}while(comparar<1000 || comparar>9999);
 	
 			i4 = comparar % 10;
@@ -260,10 +265,22 @@ void Adivinum(){
 				
 				if(d4 == i4){	printf("Cant. misma posicion: 4\n");	}
 				
-				if(d1==i1 && d2==i2 && d3==i3 && d4==i4){	printf("Felicidades! Adivinaste el numero de cuatro cifras\n\n");		puntaje = 11-i; 
-															printf("Puntaje final: %d", puntaje);		abort();	}
+				
+				
+				if(d1==i1 && d2==i2 && d3==i3 && d4==i4){
+				printf("\n\n¡Felicidades! Adivinaste el numero de cuatro cifras\n\n");	
+				puntaje = 11-i;
+				printf("Puntaje final: %d", puntaje);	
+				printf("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<V-A-M>");	abort();	}
 				}
-
+				
+				printf("\n\nLo sentimos, no adivinaste el numero de 4 cifras\n\n");
+				printf("El numero era: %d%d%d%d\n\n", d1, d2, d3, d4);
+				puntaje = 11-i;
+				printf("Puntaje final: %d\n\n", puntaje);
+				printf("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<V-A-M>");
+				system("pause");
 }
+
 
 	
