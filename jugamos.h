@@ -7,7 +7,6 @@
 
 void Maymen();
 void Ahorcado();
-void Adivinum();
 
 void Maymen(){
 	int numero, nroaleatorio, cont=11, min=1, max=999, inten=1;
@@ -199,35 +198,7 @@ void Ahorcado(){
 
 	system("pause");
 }
-void Adivinum(){
-	printf("\t\t\t\t\tBienvenido a Adivinum!\n\n");
-	printf("Este juego consiste en adivinar un numero de 4 cifras\n\n");
-	printf("Reglas: \n\n1. El jugador cuenta con 10 intentos para adivinar este numero secreto\n\n");
-	printf("2. Si el jugador adivina el numero entonces gana la partida\n\n");
-	printf("3. Se le indicara al jugador las posiciones que ocupan los digitos ingresados, misma posicion u otra posicion (1 vez como maximo)\n\n");
-	printf("Puntaje: \n\n El puntaje obtenido depende de la cantidad de intentos: si lo adivina en el primer intento, obtiene 10 puntos\n\n");
-	printf("Comenzamos?\n\n");
-	system("pause");
-	system("cls");
-	
-	int n, d1, d2, d3, d4;
-	int comparar, i1, i2, i3, i4;
-	int puntaje;
-	srand(time(NULL));
-	
-	do{
-	n = (rand() % 9000)+1000;
 
-	d4 = n % 10;
-	n = (n - d4) / 10;
-	d3 = n % 10;
-	n = (n - d3) / 10;
-	d2 = n % 10;
-	n = (n - d2) / 10;
-	d1 = n; 
 
-	}while(d1 == d2 || d1 == d3 || d1 == d4 || d2 == d3 || d2 == d4 || d3 == d4 ||
-			d1 == 0 || d2 == 0 || d3 == 0 || d4 == 0);
-}
 
 	
