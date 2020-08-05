@@ -29,7 +29,7 @@ main(){
 				break;
 				case 2: Adivinum();
 				break;
-				case 3: printf("\t\t\t\t\tBienvenido a Warcoin!");
+				case 3: Warcoin();
 				break;
 				default: printf ("Opcion ingresada no valida");
 			}

@@ -8,6 +8,7 @@
 void Maymen();
 void Ahorcado();
 void Adivinum();
+void Warcoin();
 
 void Maymen(){
 	int numero, nroaleatorio, cont=11, min=1, max=999, inten=1;
@@ -75,23 +76,14 @@ void Ahorcado(){
 	
 
 	char palabra[50], adivina[50], original[50];
-	
 	int puntaje;
-	
- 
 	int indice=0;
-
 	int intentos=10;
- 
 	char caracter;
-
 	int encontroLetra;
- 
 	int letrasAdivinadas=0;
 	
- 
-	puts("Jugador 1, ingrese la palabra y presione enter para finalizar\n\t");
-
+	printf("Jugador 1, ingrese la palabra y presione enter para finalizar\n");
  
 	do{   
 	caracter = getch();
@@ -115,8 +107,8 @@ void Ahorcado(){
 	do{
   
 	printf("La palabra a adivinar es de %d letras y esta asi:\n",strlen(palabra));
-	puts(adivina);
-	puts("\nIngrese una letra: ");
+	printf("%s", adivina);
+	printf("\nIngrese una letra: ");
 	
   
 	caracter = toupper(getche());
@@ -142,20 +134,18 @@ void Ahorcado(){
 	}
   
 	if (encontroLetra==1){
-   
-		puts("\nLa letra es correcta\n\n");
+		printf("\nLa letra es correcta\n\n");
 		if (letrasAdivinadas == strlen(palabra)){
-    	puts("\nHas adivinado la palabra !\n\n");
-    	puts(adivina);
+    	printf("\nHas adivinado la palabra !\n\n");
+    	printf("%s", adivina);
     	break;
    		}
   	}
 	else{
 		if (intentos == 1){
-    	puts("\nHas Fallado !");
+    	printf("\nHas Fallado !");
     	printf("\nLa palabra correcta era: %s\n\n",original);
-    	char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda-Pierna Derecha-Mano Izquierda-Mano Derecha-Pie izquierdo-Pie derecho\n\n";
-			printf("\nEstado del muñeco: %s", estado); printf("\t");
+    	printf("\nEstado del muñeco: Cabeza-Tronco-Brazo Izquierdo-Brazo Derecho-Pierna Izquierda-Pierna Derecha-Mano Izquierda-Mano Derecha-Pie izquierdo-Pie derecho\n\n\t");
 			printf(" ___");  printf("\n\t");
 			printf("|   |"); printf("\n\t");
 			printf("|x x|"); printf("\n\t");
@@ -170,22 +160,20 @@ void Ahorcado(){
     	break;
    		}
     	else{
-			puts("\nError en letra");
+			printf("\nError en letra");
     
         	intentos--;         
     		printf("\nTe quedan %d intentos\n",intentos);
    			}
 		if(intentos == 9){
-			char estado[500]= "Cabeza\n"; 
-			printf("\nEstado del muñeco: %s", estado); printf("\t");
+			printf("\nEstado del muñeco: Cabeza\n\n\t");
 			printf(" ___");printf("\n\t");
 			printf("|   |"); printf("\n\t");
 			printf("|x x|");printf("\n\t");
 			printf("| ~ |"); printf("\n\t");
 			printf("|___|");printf("\n\n");}
 		if(intentos == 8){
-		 	char estado[500]= "Cabeza-Tronco\n\n";
-			printf("\nEstado del muñeco: %s", estado); printf("\t");
+			printf("\nEstado del muñeco: Cabeza-Tronco\n\n\t");
 			printf(" ___");  printf("\n\t");
 			printf("|   |"); printf("\n\t");
 			printf("|x x|"); printf("\n\t");
@@ -195,8 +183,7 @@ void Ahorcado(){
 			printf(" ||| "); printf("\n\t");
 			printf(" ||| "); printf("\n\t"); }
 		if(intentos == 7){
-			char estado[500]= "Cabeza-Tronco-Brazo izquierdo\n\n";
-			printf("\nEstado del muñeco: %s", estado); printf("\t");
+			printf("\nEstado del muñeco: Cabeza-Tronco-Brazo Izquierdo\n\n\t");
 			printf(" ___");  printf("\n\t");
 			printf("|   |"); printf("\n\t");
 			printf("|x x|"); printf("\n\t");
@@ -206,8 +193,7 @@ void Ahorcado(){
 		   printf("  ||| \\"); printf("\n      ");
 		  printf("   |||  \\"); printf("\n\t");	}
 		if(intentos == 6){
-			char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho\n\n";
-			printf("\nEstado del muñeco: %s", estado); printf("\t");
+			printf("\nEstado del muñeco: Cabeza-Tronco-Brazo Izquierdo-Brazo Derecho\n\n\t");
 			printf(" ___");  printf("\n\t");
 			printf("|   |"); printf("\n\t");
 			printf("|x x|"); printf("\n\t");
@@ -217,8 +203,7 @@ void Ahorcado(){
 		   printf("/ ||| \\"); printf("\n      ");
 		  printf("/  |||  \\"); printf("\n"); }	
 		if(intentos == 5){
-			char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda\n\n";
-			printf("\nEstado del muñeco: %s", estado); printf("\t");
+			printf("\nEstado del muñeco: Cabeza-Tronco-Brazo Izquierdo-Brazo Derecho-Pierna Izquierda\n\n\t");
 			printf(" ___");  printf("\n\t");
 			printf("|   |"); printf("\n\t");
 			printf("|x x|"); printf("\n\t");
@@ -230,8 +215,7 @@ void Ahorcado(){
 		  printf("     \\"); printf("\n      ");
 		  printf("      \\"); printf("\n     "); }
 		if(intentos == 4){
-			char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda-Pierna Derecha\n\n";
-			printf("\nEstado del muñeco: %s", estado); printf("\t");
+			printf("\nEstado del muñeco: Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda-Pierna Derecha\n\n\t");
 			printf(" ___");  printf("\n\t");
 			printf("|   |"); printf("\n\t");
 			printf("|x x|"); printf("\n\t");
@@ -244,8 +228,7 @@ void Ahorcado(){
 		  printf("  /   \\"); printf("\n     ");
 			}
 		if(intentos == 3){
-			char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda-Pierna Derecha-Mano Izquierda\n\n";
-			printf("\nEstado del muñeco: %s", estado); printf("\t");
+			printf("\nEstado del muñeco: Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda-Pierna Derecha-Mano Izquierda\n\n\t");
 			printf(" ___");  printf("\n\t");
 			printf("|   |"); printf("\n\t");
 			printf("|x x|"); printf("\n\t");
@@ -257,8 +240,7 @@ void Ahorcado(){
 		 printf("    / \\   O"); printf("\n      ");
 		  printf("  /   \\"); printf("\n     ");	} 
 		if(intentos == 2){
-			char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda-Pierna Derecha-Mano Izquierda-Mano Derecha\n\n";
-			printf("\nEstado del muñeco: %s", estado); printf("\t");
+			printf("\nEstado del muñeco: Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda-Pierna Derecha-Mano Izquierda-Mano Derecha\t");
 			printf(" ___");  printf("\n\t");
 			printf("|   |"); printf("\n\t");
 			printf("|x x|"); printf("\n\t");
@@ -270,8 +252,7 @@ void Ahorcado(){
 		printf(" O   / \\   O"); printf("\n      ");
 		  printf("  /   \\"); printf("\n     ");	}
 		if(intentos == 1){
-			char estado[500]= "Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda-Pierna Derecha-Mano Izquierda-Mano Derecha-Pie izquierdo\n\n";
-			printf("\nEstado del muñeco: %s", estado); printf("\t");
+			printf("\nEstado del muñeco: Cabeza-Tronco-Brazo izquierdo-Brazo Derecho-Pierna Izquierda-Pierna Derecha-Mano Izquierda-Mano Derecha-Pie izquierdo\n\n\t");
 			printf(" ___");  printf("\n\t");
 			printf("|   |"); printf("\n\t");
 			printf("|x x|"); printf("\n\t");
@@ -287,6 +268,11 @@ void Ahorcado(){
 	printf("\n");
 	system ("pause"); system("cls");
 	}while(1);
+	if(intentos == 1){
+	puntaje =0; }
+	else{ puntaje= 50+2*(intentos-10);;
+	}
+	printf("\n\nPuntaje final obtenido: %d", puntaje);
 	printf("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<V-A-M>\n");
 	system("pause");
 }
@@ -371,6 +357,17 @@ void Adivinum(){
 				printf("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<V-A-M>");
 				system("pause");
 }
-
+void Warcoin(){
+	printf("\t\t\t\t\tBienvenido a Warcoin!\n\n");
+	printf("Este juego consiste consiste en retirar monedas de una pila contra la computadora\n\n");
+	printf("Reglas: \n\n1. El jugador, al inicio, indica la cantidad de monedas minimas y maximas que se pueden sacar\n\n");
+	printf("2. La computadora indicara cuantas monedas hay en la pila\n\n");
+	printf("3. El juego empieza de manera aleatoria, empieza el jugador o la computadora\n\n");
+	printf("4. El juego finaliza cuando alguno vacie la pila de monedas o cuando ya no se pueda quitar mas monedas de la pila\n\n");
+	printf("Puntaje: \n\n Si el jugador gana, obtendra 5 puntos. Caso contrario obtendra 0 puntos\n\n");
+	printf("Comenzamos?\n\n");
+	system("pause");
+	system("cls");
+}
 
 	
