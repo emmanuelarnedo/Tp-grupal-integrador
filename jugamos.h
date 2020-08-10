@@ -359,7 +359,7 @@ void Adivinum(){
 }
 void Warcoin(){
 	printf("\t\t\t\t\tBienvenido a Warcoin!\n\n");
-	printf("Este juego consiste consiste en retirar monedas de una pila contra la computadora\n\n");
+	printf("Este juego consiste en retirar monedas de una pila contra la computadora\n\n");
 	printf("Reglas: \n\n1. El jugador, al inicio, indica la cantidad de monedas minimas y maximas que se pueden sacar\n\n");
 	printf("2. La computadora indicara cuantas monedas hay en la pila\n\n");
 	printf("3. El juego empieza de manera aleatoria, empieza el jugador o la computadora\n\n");
