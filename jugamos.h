@@ -11,7 +11,7 @@ void Adivinum();
 void Warcoin();
 
 void Maymen(){
-	int numero, nroaleatorio, cont=11, min=1, max=999, inten=1;
+	int numero, nroaleatorio, cont=10, min=1, max=999, inten=1;
 	printf("\t\t\t\t\tBienvenido a Maymen!\n\n");
 	printf("Este juego consiste en adivinar un numero secreto comprendido entre 1 y 999\n\n");
 	printf("Reglas: \n\n1. El jugador cuenta con 10 intentos para adivinar este numero secreto\n\n");
@@ -42,12 +42,12 @@ void Maymen(){
 		}
 		cont=cont-1;
 		inten++;
-	}while(numero != nroaleatorio && cont<11);
+	}while(numero != nroaleatorio && cont!= 0);
 	
 	if (numero == nroaleatorio) {
 		printf("\nFELICIDADES! Adivinaste el numero\n\n");
 		printf("%d\n", nroaleatorio);
-		printf("\nPuntaje obtenido: %d\n\n", cont);
+		printf("\nPuntaje obtenido: %d\n\n", cont+1);
 		printf("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<V-A-M>\n");
 		system("pause");
 		}
