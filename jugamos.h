@@ -359,15 +359,31 @@ void Adivinum(){
 }
 void Warcoin(){
 	printf("\t\t\t\t\tBienvenido a Warcoin!\n\n");
-	printf("Este juego consiste en retirar monedas de una pila contra la computadora\n\n");
+	printf("Este juego consiste en retirar monedas de una pila compitiendo contra la computadora\n\n");
 	printf("Reglas: \n\n1. El jugador, al inicio, indica la cantidad de monedas minimas y maximas que se pueden sacar\n\n");
 	printf("2. La computadora indicara cuantas monedas hay en la pila\n\n");
 	printf("3. El juego empieza de manera aleatoria, empieza el jugador o la computadora\n\n");
-	printf("4. El juego finaliza cuando alguno vacie la pila de monedas o cuando ya no se pueda quitar mas monedas de la pila\n\n");
+	printf("4. El juego finaliza cuando la pila de monedas quede vacia o cuando ya no se pueda quitar mas monedas de la pila\n\n");
 	printf("Puntaje: \n\n Si el jugador gana, obtendra 5 puntos. Caso contrario obtendra 0 puntos\n\n");
 	printf("Comenzamos?\n\n");
 	system("pause");
 	system("cls");
-}
+	
+	int min, max, monedas, turno, jug, comp, contjug=0, contcomp=0;
+	srand(time(NULL));
+	
+	printf("~> Ingrese la cantidad Minima de monedas a retirar por turno: ");
+	scanf("%d", &min);
+	printf("\n~> Ingrese la cantidad Maxima de monedas a retirar por turno: ");
+	scanf("%d", &max);
+	
+	monedas = 10+rand()%(40);
+	printf("\nLa cantidad de monedas en la pila es: %d\n\n", monedas);
+	system("pause");
+	system("cls");
+		
+	turno = 1+rand()%(7);
+	
+ }
 
 	
