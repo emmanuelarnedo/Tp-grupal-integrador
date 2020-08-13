@@ -383,7 +383,51 @@ void Warcoin(){
 	system("cls");
 		
 	turno = 1+rand()%(7);
+
+	if(turno<=4){
+		while(monedas!=0 || min<=monedas){
+			printf("Tu turno:\n\n");
+			printf("Ingrese la cantidad de monedas a retirar entre %d y %d\n\n", min, max);
+			scanf("%d", &jug);
+			if(jug<min || jug>max){
+				printf("\nError, el numero debe estar comprendido entre %d y %d. Por favor ingrese otra vez un numero\n\n", min, max);
+				scanf("%d", &jug);	}
+
+		printf("\nRetiraste %d monedas de la pila\n\n", jug);
+
+		monedas = monedas-jug;
+		printf("Cantidad de monedas en la pila: %d\n\n", monedas);
+		contjug++;
+		system("pause");
+		system("cls");
 	
+		if(monedas>=min){
+			printf("Turno de la computadora\n\n");
+			comp=min+rand()%(max-1);
+			if(monedas-comp<0){
+				printf("\nError. Computadora ingresara otra vez un numero\n\n", min, max);
+				comp=min+rand()%(max-1);
+			}
+			printf("La computadora retira %d monedas de la pila\n\n", comp);
+			monedas = monedas-comp;
+			printf("Cantidad de monedas en la pila: %d\n\n", monedas);
+			contcomp++;
+			system("pause");
+			system("cls");
+				}
+			}
+		
+		if(contcomp>=contjug){
+			printf("Lo lamentamos, la computadora gano el juego\n\nPuntaje final obtenido: 0\n\n");
+			system("pause");
+			getch();	}
+		if(contjug>contcomp){
+			printf("Felicidades, tu ganaste el juego\n\nPuntaje final obtenido: 5\n\n"),
+			system("pause");
+			getch();	}
+		}	
+ 
+ 
  }
 
 	
