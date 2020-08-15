@@ -11,7 +11,7 @@ void Adivinum();
 void Warcoin();
 
 void Maymen(){
-	int numero, nroaleatorio, cont=10, min=1, max=999, inten=1;
+	int numero, nroaleatorio, cont=11, min=1, max=999, inten=1;
 	printf("\t\t\t\t\tBienvenido a Maymen!\n\n");
 	printf("Este juego consiste en adivinar un numero secreto comprendido entre 1 y 999\n\n");
 	printf("Reglas: \n\n1. El jugador cuenta con 10 intentos para adivinar este numero secreto\n\n");
@@ -42,12 +42,12 @@ void Maymen(){
 		}
 		cont=cont-1;
 		inten++;
-	}while(numero != nroaleatorio && cont!= 0);
+	}while(numero != nroaleatorio && cont<11);
 	
 	if (numero == nroaleatorio) {
 		printf("\nFELICIDADES! Adivinaste el numero\n\n");
 		printf("%d\n", nroaleatorio);
-		printf("\nPuntaje obtenido: %d\n\n", cont+1);
+		printf("\nPuntaje obtenido: %d\n\n", cont);
 		printf("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<V-A-M>\n");
 		system("pause");
 		}
@@ -369,116 +369,66 @@ void Warcoin(){
 	system("pause");
 	system("cls");
 	
-<<<<<<< HEAD
-int min, max, monedas, turno, jug, comp, contjug=0, contcomp=0;
-=======
-	int min, max, monedas, turno, jug, comp, contjug=0, contcomp=0;
->>>>>>> cda13f918367ffacef6419508a542fa496bea848
+	int cmin,cmax,cmonedas,turno,monu,monc;
 	srand(time(NULL));
 	
 	printf("~> Ingrese la cantidad Minima de monedas a retirar por turno: ");
-	scanf("%d", &min);
+	scanf("%d",&cmin);
 	printf("\n~> Ingrese la cantidad Maxima de monedas a retirar por turno: ");
-	scanf("%d", &max);
+	scanf("%d",&cmax);
 	
-	monedas = 10+rand()%(40);
-	printf("\nLa cantidad de monedas en la pila es: %d\n\n", monedas);
-	system("pause");
+	cmonedas = 10+rand()%(50);
+	system("\n\npause");
 	system("cls");
 		
-	turno = 1+rand()%(7);
-<<<<<<< HEAD
-	
-=======
-
->>>>>>> cda13f918367ffacef6419508a542fa496bea848
-	if(turno<=4){
-		while(monedas!=0 || min<=monedas){
-			printf("Tu turno:\n\n");
-			printf("Ingrese la cantidad de monedas a retirar entre %d y %d\n\n", min, max);
-			scanf("%d", &jug);
-			if(jug<min || jug>max){
-				printf("\nError, el numero debe estar comprendido entre %d y %d. Por favor ingrese otra vez un numero\n\n", min, max);
-				scanf("%d", &jug);	}
-
-		printf("\nRetiraste %d monedas de la pila\n\n", jug);
-
-		monedas = monedas-jug;
-		printf("Cantidad de monedas en la pila: %d\n\n", monedas);
-		contjug++;
-		system("pause");
-		system("cls");
-	
-		if(monedas>=min){
-			printf("Turno de la computadora\n\n");
-			comp=min+rand()%(max-1);
-			if(monedas-comp<0){
-				printf("\nError. Computadora ingresara otra vez un numero\n\n", min, max);
-				comp=min+rand()%(max-1);
-			}
-			printf("La computadora retira %d monedas de la pila\n\n", comp);
-			monedas = monedas-comp;
-			printf("Cantidad de monedas en la pila: %d\n\n", monedas);
-			contcomp++;
-			system("pause");
-			system("cls");
-				}
-			}
+		turno=rand()%(1);
 		
-		if(contcomp>=contjug){
-			printf("Lo lamentamos, la computadora gano el juego\n\nPuntaje final obtenido: 0\n\n");
-			system("pause");
-			getch();	}
-		if(contjug>contcomp){
-			printf("Felicidades, tu ganaste el juego\n\nPuntaje final obtenido: 5\n\n"),
-			system("pause");
-			getch();	}
-<<<<<<< HEAD
-		}
-	else{
-		while(monedas != 0 || min<=monedas){
-			printf("Turno de la computadora:\n\n");
-			comp=min+rand()%(max-1);
-			printf("La computadora retira %d monedas de la pila\n\n", comp);
-			monedas= monedas-comp;
-			printf("Cantidad de monedas en la pila: %d\n\n", monedas);
-			contcomp++;
-			system("pause");
-			system("cls");			
+	while(cmonedas>=cmin){
 			
-			if(monedas>=min){
-				printf("Tu turno:\n\n");
-				printf("Ingrese la cantidad de monedas a retirar entre %d y %d\n\n", min, max);
-				scanf("%d", &jug);
-				if(jug<min || jug>max){
-					printf("\nError, el numero debe estar comprendido entre %d y %d. Por favor ingrese otra vez un numero\n\n", min, max);	
-					scanf("%d", &jug);	}
-			printf("\nRetiraste %d monedas de la pila\n\n", jug);		
+		if(turno==0){
+			printf("%d",cmonedas);
+			printf("~> ¡Es tu turno! <~\n\n");
+			printf("Ingresa la cantidad de monedas a eliminar: ");
+			scanf("%d",&monu);
 			
-			monedas = monedas-jug;
-			printf("Cantidad de monedas en la pila: %d\n\n", monedas);			
-			contjug++;	
-			system("pause");
-			system("cls");		}	
-			}
-		if(contjug>contcomp){
-			printf("Felicidades, tu ganaste el juego\n\nPuntaje final obtenido: 5\n\n"),
-			system("pause");
-			getch();	}			
-		if(contcomp>contjug){
-			printf("Lo lamentamos, la computadora gano el juego\n\nPuntaje final obtenido: 0\n\n");
-			system("pause");
-			getch();	}			
-		}
+				if(monu<cmin || monu>cmax){
+					printf("\n\nNumero incorrecto, el minimo a ingresar es %d y el maximo es %d, hazlo de nuevo: ",cmin,cmax);
+					scanf("%d",&monu);}
+			printf("\n\nTu eliminas %d monedas de la fila\n",monu);
+			cmonedas=cmonedas-monu;
+			
+				if(cmonedas<cmin || cmonedas==0){
+					system("cls");
+					printf("¡Felicidades, ganaste WarCoin!");
+					printf("\n\nTu puntaje es de 5 puntos\n\n");
+					system("pause");
+					exit(-1);}
+			turno=1;
+			system("\n\npause"); system("cls");}
+					
+		else 
+			printf("~> ¡Es el turno de la computadora! <~");
+			monc=rand()%(cmax);
+				if(monc<cmin){
+					do monc++;
+					while(monc<cmin);
+				}
+			printf("\nLa computadora elimina %d monedas de la fila\n\n",monc);
+			cmonedas=cmonedas-monc;
+			if(cmonedas<cmin || cmonedas==0){
+				system("cls");
+				printf("La computadora gano WarCoin...");
+				printf("\n\nLo sentimos tu puntaje es 0,mejor suerte para la proxima :( \n\n");
+				system("pause");
+				exit(-1);}
+			turno=0;
+			system("pause"); system("cls");	
+		
+	}
+
+			
+	
 }
-=======
-		}	
- 
- 
- }
->>>>>>> cda13f918367ffacef6419508a542fa496bea848
-
-
 	
 	
 	
